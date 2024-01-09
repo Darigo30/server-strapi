@@ -7,6 +7,7 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /opt/
 COPY package.json package-lock.json ./
 RUN npm install -g node-gyp
+RUN npm install -g strapi
 
 ENV PATH /opt/node_modules/.bin:$PATH
 
