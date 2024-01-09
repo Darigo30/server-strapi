@@ -11,7 +11,6 @@ RUN npm config set fetch-retry-maxtimeout 600000 -g
 RUN npm cache clean -f
 RUN echo "Instalando dependencias..."
 RUN npm install
-RUN npm install
 ENV PATH /opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
