@@ -768,13 +768,44 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiInformeBibliometricoInformeBibliometrico
-  extends Schema.CollectionType {
-  collectionName: 'informes_bibliometricos';
+export interface ApiConoceConoce extends Schema.CollectionType {
+  collectionName: 'conoces';
   info: {
-    singularName: 'informe-bibliometrico';
-    pluralName: 'informes-bibliometricos';
-    displayName: 'Informes bibliom\u00E9tricos';
+    singularName: 'conoce';
+    pluralName: 'conoces';
+    displayName: 'Conoce sobre nosotros';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Equipotexto: Attribute.Text;
+    Equipo: Attribute.Component<'equipo.equipo'>;
+    ProyectosyProgramas: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::conoce.conoce',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::conoce.conoce',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConoceLaRedBefConoceLaRedBef extends Schema.CollectionType {
+  collectionName: 'conoce_la_red_befs';
+  info: {
+    singularName: 'conoce-la-red-bef';
+    pluralName: 'conoce-la-red-befs';
+    displayName: 'Conoce la red BEF';
     description: '';
   };
   options: {
@@ -782,19 +813,22 @@ export interface ApiInformeBibliometricoInformeBibliometrico
   };
   attributes: {
     Titulo: Attribute.String;
-    Texto: Attribute.RichText;
-    descargar: Attribute.Media;
+    Textobajada: Attribute.Text;
+    Imagen: Attribute.Media;
+    Espacios: Attribute.Text;
+    Directorio: Attribute.Text;
+    Equipo: Attribute.Component<'equipo.equipo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::informe-bibliometrico.informe-bibliometrico',
+      'api::conoce-la-red-bef.conoce-la-red-bef',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::informe-bibliometrico.informe-bibliometrico',
+      'api::conoce-la-red-bef.conoce-la-red-bef',
       'oneToOne',
       'admin::user'
     > &
@@ -808,6 +842,7 @@ export interface ApiLibroLibro extends Schema.CollectionType {
     singularName: 'libro';
     pluralName: 'libros';
     displayName: 'libros';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -815,85 +850,123 @@ export interface ApiLibroLibro extends Schema.CollectionType {
   attributes: {
     titulo: Attribute.String;
     Resumen: Attribute.RichText;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::libro.libro',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::libro.libro',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiNoticiaNoticia extends Schema.CollectionType {
-  collectionName: 'noticias';
-  info: {
-    singularName: 'noticia';
-    pluralName: 'noticias';
-    displayName: 'Noticia';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Titulo: Attribute.String;
-    Subtitulo: Attribute.RichText;
-    Textonoticia: Attribute.RichText;
-    Imagennoticia: Attribute.Media;
-    Citanoticia: Attribute.RichText;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::noticia.noticia',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::noticia.noticia',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSliderSlider extends Schema.CollectionType {
-  collectionName: 'sliders';
-  info: {
-    singularName: 'slider';
-    pluralName: 'sliders';
-    displayName: 'Slider';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Titulo: Attribute.String;
-    Bajada: Attribute.RichText;
     Imagen: Attribute.Media;
+    NombreAutor: Attribute.String;
+    LinkDescargar: Attribute.String;
+    LinkLeerLibro: Attribute.String;
+    TipodeLibro: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::slider.slider',
+      'api::libro.libro',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::slider.slider',
+      'api::libro.libro',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNoticiasBefNoticiasBef extends Schema.CollectionType {
+  collectionName: 'noticias_befs';
+  info: {
+    singularName: 'noticias-bef';
+    pluralName: 'noticias-befs';
+    displayName: 'Noticias BEF';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Texto: Attribute.Text;
+    Titulo: Attribute.String;
+    verdetalle: Attribute.String;
+    Imagen2: Attribute.Media;
+    Imagen1: Attribute.Media;
+    fecha: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::noticias-bef.noticias-bef',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::noticias-bef.noticias-bef',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPreguntasfrecuentePreguntasfrecuente
+  extends Schema.CollectionType {
+  collectionName: 'preguntasfrecuentes';
+  info: {
+    singularName: 'preguntasfrecuente';
+    pluralName: 'preguntasfrecuentes';
+    displayName: 'Preguntas frecuentes';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo: Attribute.String;
+    Respuesta: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::preguntasfrecuente.preguntasfrecuente',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::preguntasfrecuente.preguntasfrecuente',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiResenasdelibroResenasdelibro extends Schema.CollectionType {
+  collectionName: 'resenasdelibros';
+  info: {
+    singularName: 'resenasdelibro';
+    pluralName: 'resenasdelibros';
+    displayName: 'Rese\u00F1as de libros';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Bajada: Attribute.Text;
+    Fecha: Attribute.Date;
+    Nombreyapellido: Attribute.String;
+    Cargo: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::resenasdelibro.resenasdelibro',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::resenasdelibro.resenasdelibro',
       'oneToOne',
       'admin::user'
     > &
@@ -919,10 +992,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::informe-bibliometrico.informe-bibliometrico': ApiInformeBibliometricoInformeBibliometrico;
+      'api::conoce.conoce': ApiConoceConoce;
+      'api::conoce-la-red-bef.conoce-la-red-bef': ApiConoceLaRedBefConoceLaRedBef;
       'api::libro.libro': ApiLibroLibro;
-      'api::noticia.noticia': ApiNoticiaNoticia;
-      'api::slider.slider': ApiSliderSlider;
+      'api::noticias-bef.noticias-bef': ApiNoticiasBefNoticiasBef;
+      'api::preguntasfrecuente.preguntasfrecuente': ApiPreguntasfrecuentePreguntasfrecuente;
+      'api::resenasdelibro.resenasdelibro': ApiResenasdelibroResenasdelibro;
     }
   }
 }

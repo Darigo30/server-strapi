@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "conoces",
+  "info": {
+    "singularName": "conoce",
+    "pluralName": "conoces",
+    "displayName": "Conoce sobre nosotros"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Equipotexto": {
+      "type": "text"
+    },
+    "Equipo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "equipo.equipo"
+    },
+    "ProyectosyProgramas": {
+      "type": "text"
+    }
+  }
+}

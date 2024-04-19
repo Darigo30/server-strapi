@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "libros",
+  "collectionName": "conoce_la_red_befs",
   "info": {
-    "singularName": "libro",
-    "pluralName": "libros",
-    "displayName": "libros",
+    "singularName": "conoce-la-red-bef",
+    "pluralName": "conoce-la-red-befs",
+    "displayName": "Conoce la red BEF",
     "description": ""
   },
   "options": {
@@ -12,11 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "titulo": {
+    "Titulo": {
       "type": "string"
     },
-    "Resumen": {
-      "type": "richtext"
+    "Textobajada": {
+      "type": "text"
     },
     "Imagen": {
       "type": "media",
@@ -29,17 +29,16 @@
         "audios"
       ]
     },
-    "NombreAutor": {
-      "type": "string"
+    "Espacios": {
+      "type": "text"
     },
-    "LinkDescargar": {
-      "type": "string"
+    "Directorio": {
+      "type": "text"
     },
-    "LinkLeerLibro": {
-      "type": "string"
-    },
-    "TipodeLibro": {
-      "type": "string"
+    "Equipo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "equipo.equipo"
     }
   }
 }

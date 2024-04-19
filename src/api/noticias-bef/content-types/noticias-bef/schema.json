@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "noticias_befs",
+  "info": {
+    "singularName": "noticias-bef",
+    "pluralName": "noticias-befs",
+    "displayName": "Noticias BEF",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Texto": {
+      "type": "text"
+    },
+    "Titulo": {
+      "type": "string"
+    },
+    "verdetalle": {
+      "type": "string"
+    },
+    "Imagen2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Imagen1": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "fecha": {
+      "type": "date"
+    }
+  }
+}

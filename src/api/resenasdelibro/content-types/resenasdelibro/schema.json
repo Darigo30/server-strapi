@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "resenasdelibros",
+  "info": {
+    "singularName": "resenasdelibro",
+    "pluralName": "resenasdelibros",
+    "displayName": "Reseñas de libros"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Bajada": {
+      "type": "text"
+    },
+    "Fecha": {
+      "type": "date"
+    },
+    "Nombreyapellido": {
+      "type": "string"
+    },
+    "Cargo": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_equipo_equipos",
+  "info": {
+    "displayName": "Equipo",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Imagen": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "NombreApellido": {
+      "type": "string"
+    },
+    "Cargo": {
+      "type": "string"
+    }
+  }
+}
