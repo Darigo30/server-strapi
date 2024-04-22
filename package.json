@@ -4,8 +4,9 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
+    "develop": "cross-env NODE_ENV=development cp .env.development .env && strapi develop",
+    "staging": "cross-env NODE_ENV=staging cp .env.staging .env && strapi start",
+    "start": "cross-env NODE_ENV=production cp .env.production .env && strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
@@ -31,5 +32,8 @@
     "node": ">=14.19.1 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
 }
