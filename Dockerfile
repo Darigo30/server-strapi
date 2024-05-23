@@ -13,6 +13,8 @@ WORKDIR /opt/app
 COPY . .
 RUN chown -R node:node /opt/app
 USER node
-RUN ["npm", "run", "build"]
+RUN ["npm", "run", "build"] 
 EXPOSE 8000
 CMD ["npm", "run", "develop"] 
+
+# TODO: CONSTRUIR IMAGEN PARA DESPLEGAR EN DOCKER (STAGING Y PRODUCCION)

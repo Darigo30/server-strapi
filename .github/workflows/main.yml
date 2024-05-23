@@ -28,4 +28,4 @@ jobs:
           docker build -t darigo/api-strapi:latest .
           docker push darigo/api-strapi:latest
 
-      
+      #TODO CONSTRUIR AMBIENTES DE PRODUCCION Y STAGING + RAMAS DE GIT
