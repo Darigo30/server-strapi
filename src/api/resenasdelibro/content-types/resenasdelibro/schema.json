@@ -4,7 +4,8 @@
   "info": {
     "singularName": "resenasdelibro",
     "pluralName": "resenasdelibros",
-    "displayName": "Reseñas de libros"
+    "displayName": "Reseñas de libros BEF",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

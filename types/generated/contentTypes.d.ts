@@ -773,7 +773,8 @@ export interface ApiConoceConoce extends Schema.CollectionType {
   info: {
     singularName: 'conoce';
     pluralName: 'conoces';
-    displayName: 'Conoce sobre nosotros';
+    displayName: 'Conoce sobre nosotros BEF';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -836,12 +837,49 @@ export interface ApiConoceLaRedBefConoceLaRedBef extends Schema.CollectionType {
   };
 }
 
+export interface ApiJuegosBefJuegosBef extends Schema.CollectionType {
+  collectionName: 'juegos_befs';
+  info: {
+    singularName: 'juegos-bef';
+    pluralName: 'juegos-befs';
+    displayName: 'Juegos BEF';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulojuego: Attribute.String;
+    imagenjuego: Attribute.Media;
+    botondescargarcolor: Attribute.String;
+    botondescargarblancoyn: Attribute.String;
+    botondescargartp: Attribute.String;
+    botonmasdetalles: Attribute.String;
+    bajadajuego: Attribute.Text;
+    desarrolladopor: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::juegos-bef.juegos-bef',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::juegos-bef.juegos-bef',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLibroLibro extends Schema.CollectionType {
   collectionName: 'libros';
   info: {
     singularName: 'libro';
     pluralName: 'libros';
-    displayName: 'libros';
+    displayName: 'libros BEF';
     description: '';
   };
   options: {
@@ -915,7 +953,8 @@ export interface ApiPreguntasfrecuentePreguntasfrecuente
   info: {
     singularName: 'preguntasfrecuente';
     pluralName: 'preguntasfrecuentes';
-    displayName: 'Preguntas frecuentes';
+    displayName: 'Preguntas frecuentes BEF';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -946,7 +985,8 @@ export interface ApiResenasdelibroResenasdelibro extends Schema.CollectionType {
   info: {
     singularName: 'resenasdelibro';
     pluralName: 'resenasdelibros';
-    displayName: 'Rese\u00F1as de libros';
+    displayName: 'Rese\u00F1as de libros BEF';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -994,6 +1034,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::conoce.conoce': ApiConoceConoce;
       'api::conoce-la-red-bef.conoce-la-red-bef': ApiConoceLaRedBefConoceLaRedBef;
+      'api::juegos-bef.juegos-bef': ApiJuegosBefJuegosBef;
       'api::libro.libro': ApiLibroLibro;
       'api::noticias-bef.noticias-bef': ApiNoticiasBefNoticiasBef;
       'api::preguntasfrecuente.preguntasfrecuente': ApiPreguntasfrecuentePreguntasfrecuente;

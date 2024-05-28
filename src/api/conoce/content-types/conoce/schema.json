@@ -4,7 +4,8 @@
   "info": {
     "singularName": "conoce",
     "pluralName": "conoces",
-    "displayName": "Conoce sobre nosotros"
+    "displayName": "Conoce sobre nosotros BEF",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

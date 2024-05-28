@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "juegos_befs",
+  "info": {
+    "singularName": "juegos-bef",
+    "pluralName": "juegos-befs",
+    "displayName": "Juegos BEF"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulojuego": {
+      "type": "string"
+    },
+    "imagenjuego": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "botondescargarcolor": {
+      "type": "string"
+    },
+    "botondescargarblancoyn": {
+      "type": "string"
+    },
+    "botondescargartp": {
+      "type": "string"
+    },
+    "botonmasdetalles": {
+      "type": "string"
+    },
+    "bajadajuego": {
+      "type": "text"
+    },
+    "desarrolladopor": {
+      "type": "string"
+    }
+  }
+}

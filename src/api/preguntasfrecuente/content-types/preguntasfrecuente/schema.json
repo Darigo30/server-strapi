@@ -4,7 +4,8 @@
   "info": {
     "singularName": "preguntasfrecuente",
     "pluralName": "preguntasfrecuentes",
-    "displayName": "Preguntas frecuentes"
+    "displayName": "Preguntas frecuentes BEF",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
