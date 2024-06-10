@@ -13,16 +13,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.15.0'
+
+      - name: Install dependencies
+        run: npm install
+
       - name: Build Strapi app for demo
-       #nueva linea para compilar el proyecto en ambiente demo 146.155.28.129
         run: npm run build:demo 
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Debug
-        run: |
-          echo "Debug information.."
+        run: echo "Debug information.."
           
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
