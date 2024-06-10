@@ -911,6 +911,39 @@ export interface ApiLibroLibro extends Schema.CollectionType {
   };
 }
 
+export interface ApiMaterialEducativoMaterialEducativo
+  extends Schema.CollectionType {
+  collectionName: 'materiales_educativos';
+  info: {
+    singularName: 'material-educativo';
+    pluralName: 'materiales-educativos';
+    displayName: 'Materiales educativos';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo: Attribute.String;
+    botondescargarmaterial: Attribute.String;
+    botonvermas: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::material-educativo.material-educativo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::material-educativo.material-educativo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNoticiasBefNoticiasBef extends Schema.CollectionType {
   collectionName: 'noticias_befs';
   info: {
@@ -1036,6 +1069,7 @@ declare module '@strapi/types' {
       'api::conoce-la-red-bef.conoce-la-red-bef': ApiConoceLaRedBefConoceLaRedBef;
       'api::juegos-bef.juegos-bef': ApiJuegosBefJuegosBef;
       'api::libro.libro': ApiLibroLibro;
+      'api::material-educativo.material-educativo': ApiMaterialEducativoMaterialEducativo;
       'api::noticias-bef.noticias-bef': ApiNoticiasBefNoticiasBef;
       'api::preguntasfrecuente.preguntasfrecuente': ApiPreguntasfrecuentePreguntasfrecuente;
       'api::resenasdelibro.resenasdelibro': ApiResenasdelibroResenasdelibro;
