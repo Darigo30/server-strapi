@@ -7,7 +7,9 @@
     "develop": "cross-env NODE_ENV=development cp .env.development .env && strapi develop",
     "staging": "cross-env NODE_ENV=staging cp .env.staging .env && strapi start",
     "start": "cross-env NODE_ENV=production cp .env.production .env && strapi start",
+    "demo": "cross-env NODE_ENV=demo cp .env.demo .env && strapi start",
     "build": "strapi build",
+    "build:demo": "cross-env NODE_ENV=demo cp .env.demo .env && strapi build",
     "strapi": "strapi"
   },
   "dependencies": {

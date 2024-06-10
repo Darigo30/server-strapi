@@ -13,6 +13,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Build Strapi app for demo
+       #nueva linea para compilar el proyecto en ambiente demo 146.155.28.129
+        run: npm run build:demo 
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -27,5 +31,3 @@ jobs:
         run: |
           docker build -t darigo/api-strapi:latest .
           docker push darigo/api-strapi:latest
-
-      #TODO CONSTRUIR AMBIENTES DE PRODUCCION Y STAGING + RAMAS DE GIT
