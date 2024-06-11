@@ -17,4 +17,3 @@ RUN ["npm", "run", "build"]
 EXPOSE 8000
 CMD ["npm", "run", "demo"] 
 
-# TODO: CONSTRUIR IMAGEN PARA DESPLEGAR EN DOCKER (STAGING Y PRODUCCION)
