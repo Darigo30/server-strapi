@@ -1,6 +1,6 @@
 FROM node:18-alpine
 RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev nasm bash vips-dev git
-ARG NODE_ENV=development
+ARG NODE_ENV=demo
 ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /opt/
@@ -15,6 +15,6 @@ RUN chown -R node:node /opt/app
 USER node
 RUN ["npm", "run", "build"] 
 EXPOSE 8000
-CMD ["npm", "run", "develop"] 
+CMD ["npm", "run", "demo"] 
 
 # TODO: CONSTRUIR IMAGEN PARA DESPLEGAR EN DOCKER (STAGING Y PRODUCCION)
