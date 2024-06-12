@@ -2,16 +2,15 @@ version: '3'
 services:
   mysql:
     image: mysql:latest
-    command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql-data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: D4r!4n4*
       MYSQL_DATABASE: strapi
-      MYSQL_USER: root
-      MYSQL_PASSWORD: D4r!4n4*
     ports:
       - "3306:3306"
+    networks:
+      - app-network
 
   strapi:
     build:
@@ -29,6 +28,12 @@ services:
       - "8000:8000"
     depends_on:
       - mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mysql-data:
