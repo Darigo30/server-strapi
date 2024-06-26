@@ -37,8 +37,8 @@ jobs:
         run: docker-compose build strapi
 
       - name: Push Docker image to Docker Hub
-        run: docker push strapi
-        
+        run: docker push darigo/api-strapi:latest
+
       - name: Run Docker Compose
         run: docker-compose up --build -d
 
