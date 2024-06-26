@@ -36,6 +36,9 @@ jobs:
       - name: Build Docker image
         run: docker-compose build strapi
 
+      - name: Tag Docker image
+        run: docker tag server-strapi_strapi:latest darigo/api-strapi:latest
+
       - name: Push Docker image to Docker Hub
         run: docker push darigo/api-strapi:latest
 
