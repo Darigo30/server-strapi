@@ -33,10 +33,14 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-      - name: Build and push Docker image using Docker Compose
-        run: |
-          docker-compose build
-          docker-compose push darigo/api-strapi:latest
+      - name: Build Docker image
+        run: docker-compose build strapi
+
+      - name: Tag Docker image
+        run: docker tag darigo/api-strapi:latest darigo/api-strapi:latest
+
+      - name: Push Docker image to Docker Hub
+        run: docker push darigo/api-strapi:latest
 
       - name: Run Docker Compose
         run: docker-compose up --build -d
