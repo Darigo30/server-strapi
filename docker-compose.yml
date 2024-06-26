@@ -17,6 +17,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      image: darigo/api-strapi:latest
     environment:
       DATABASE_CLIENT: mysql2
       DATABASE_HOST: mysql
