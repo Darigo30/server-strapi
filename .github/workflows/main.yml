@@ -37,3 +37,9 @@ jobs:
         run: |
           docker-compose build
           docker-compose push
+
+      - name: Run Docker Compose
+        run: docker-compose up --build -d
+
+      - name: Debug
+        run: echo "Debug information..."
