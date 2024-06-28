@@ -78,7 +78,7 @@ $RECYCLE.BIN/
 ssl
 .idea
 nbproject
-!public/uploads/.gitkeep
+#!public/uploads/.gitkeep
 
 ############################
 # Node.js
