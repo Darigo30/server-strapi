@@ -945,7 +945,7 @@ export interface ApiMaterialEducativoMaterialEducativo
 }
 
 export interface ApiNoticiasBefNoticiasBef extends Schema.CollectionType {
-  collectionName: 'noticias_befs';
+  collectionName: 'bibliotecaescolarfuturo_content';
   info: {
     singularName: 'noticias-bef';
     pluralName: 'noticias-befs';
@@ -956,12 +956,21 @@ export interface ApiNoticiasBefNoticiasBef extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Texto: Attribute.Text;
-    Titulo: Attribute.String;
-    verdetalle: Attribute.String;
-    Imagen2: Attribute.Media;
-    Imagen1: Attribute.Media;
-    fecha: Attribute.Date;
+    title: Attribute.String;
+    alias: Attribute.String;
+    introtext: Attribute.String;
+    fulltext: Attribute.String;
+    state: Attribute.Boolean;
+    catid: Attribute.Integer;
+    created: Attribute.Date;
+    created_by_alias: Attribute.String;
+    modified: Attribute.Date;
+    modified_by: Attribute.Integer;
+    publish_up: Attribute.Date;
+    publish_down: Attribute.Date;
+    images: Attribute.Media;
+    urls: Attribute.String;
+    note: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

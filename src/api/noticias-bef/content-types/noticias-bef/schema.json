@@ -1,6 +1,6 @@
 {
   "kind": "collectionType",
-  "collectionName": "noticias_befs",
+  "collectionName": "bibliotecaescolarfuturo_content",
   "info": {
     "singularName": "noticias-bef",
     "pluralName": "noticias-befs",
@@ -12,39 +12,57 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Texto": {
-      "type": "text"
-    },
-    "Titulo": {
+    "title": {
       "type": "string"
     },
-    "verdetalle": {
+    "alias": {
       "type": "string"
     },
-    "Imagen2": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "introtext": {
+      "type": "string"
     },
-    "Imagen1": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "fulltext": {
+      "type": "string"
     },
-    "fecha": {
+    "state": {
+      "type": "boolean"
+    },
+    "catid": {
+      "type": "integer"
+    },
+    "created": {
       "type": "date"
+    },
+    "created_by_alias": {
+      "type": "string"
+    },
+    "modified": {
+      "type": "date"
+    },
+    "modified_by": {
+      "type": "integer"
+    },
+    "publish_up": {
+      "type": "date"
+    },
+    "publish_down": {
+      "type": "date"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "urls": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
     }
   }
 }
