@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * libro router
+ * libro router ok
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
