@@ -6,10 +6,10 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: D4r!4n4*
+      MYSQL_ROOT_PASSWORD: 12345678
       MYSQL_DATABASE: strapi
       MYSQL_USER: strapi
-      MYSQL_PASSWORD: D4r!4n4*
+      MYSQL_PASSWORD: 12345678
     ports:
       - "3307:3306"
     command: --default-authentication-plugin=mysql_native_password
@@ -26,7 +26,7 @@ services:
       DATABASE_PORT: 3306
       DATABASE_NAME: strapi
       DATABASE_USERNAME: strapi
-      DATABASE_PASSWORD: D4r!4n4*
+      DATABASE_PASSWORD: 12345678
       DATABASE_SSL: "false"
     ports:
       - "80:8000"
